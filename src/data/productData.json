@@ -1,0 +1,94 @@
+{
+    "products": [
+        {
+            "ideal": "MEN",
+            "brand": "PUMA",
+            "title": "Printed Men Round Neck Green T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/714/857/ktd9mkw0/t-shirt/6/d/q/m-67029605-puma-original-imag6q3amzf2kezh.jpeg?q=50",
+            "price": 674,
+            "mrp": "₹1,499",
+            "discount": "55% off",
+            "sizes": {
+                "S": 1,
+                "M": 1,
+                "L": 1,
+                "XL": 0
+            }
+        },
+        {
+            "ideal": "WOMEN",
+            "brand": "PUMA",
+            "title": "Solid Women Round Neck Yellow T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/800/960/ksnjp8w0/t-shirt/r/4/g/s-58686737-puma-original-imag66auu8utdjqy.jpeg?q=50",
+            "price": 952,
+            "mrp": "₹1,299",
+            "discount": "26% off",
+            "sizes": {
+                "S": 0,
+                "M": 1,
+                "L": 1,
+                "XL": 1
+            }
+        },
+        {
+            "ideal": "MEN",
+            "brand": "ADIDAS",
+            "title": "Printed Men Round Neck White T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/800/960/ku8pbbk0/t-shirt/v/v/n/m-gs6306-adidas-original-imag7eh5u5jvsbew.jpeg?q=50",
+            "price": 779,
+            "mrp": "₹1,299",
+            "discount": "40% off",
+            "sizes": {
+                "S": 1,
+                "M": 0,
+                "L": 1,
+                "XL": 1
+            }
+        },
+        {
+            "ideal": "WOMEN",
+            "brand": "ADIDAS",
+            "title": "Solid Women Round Neck Blue T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/800/960/ks3jjbk0/t-shirt/q/l/q/s-hd6986-adidas-original-imag5qqhzgynzqda.jpeg?q=50",
+            "price": 1124,
+            "mrp": "₹1,499",
+            "discount": "25% off",
+            "sizes": {
+                "S": 1,
+                "M": 1,
+                "L": 0,
+                "XL": 1
+            }
+        },
+        {
+            "ideal": "MEN",
+            "brand": "NIKE",
+            "title": "Printed Men Round Neck Black T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/800/960/krtjgcw0/t-shirt/4/h/j/m-dj1386-010-nike-original-imag5j3bqgyxakh9.jpeg?q=50",
+            "price": 1386,
+            "mrp": "₹1,795",
+            "discount": "22% off",
+            "sizes": {
+                "S": 0,
+                "M": 1,
+                "L": 0,
+                "XL": 1
+            }
+        },
+        {
+            "ideal": "WOMEN",
+            "brand": "NIKE",
+            "title": "Printed Women Round Neck Black, Pink T-Shirt",
+            "image": "https://rukminim1.flixcart.com/image/800/960/kjrh2fk0-0/t-shirt/y/p/9/s-cv3594-010-nike-original-imafz94zqpazsmhb.jpeg?q=50",
+            "price": 1155,
+            "mrp": "₹1,595",
+            "discount": "27% off",
+            "sizes": {
+                "S": 1,
+                "M": 0,
+                "L": 1,
+                "XL": 0
+            }
+        }
+    ]
+}
