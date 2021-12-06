@@ -1,29 +1,33 @@
 import React from "react";
 import Box from '@mui/material/Box';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import { DEFAULT, PRICE_LOW_TO_HIGH, PRICE_HIGH_TO_LOW, } from '../utils/constants';
+import { useStateValue } from "../utils/store";
+import { SORT } from '../utils/constants';
 
-function Sort({ Sort, setSort }) {
-    const handleSort = (e, newSort) => {
-        setSort(newSort);
+function Sort() {
+    const [{ sortBy }, dispatch] = useStateValue();
+    const sortProducts = (sortType) => {
+        dispatch({ type: SORT, payload: sortType });
     };
 
     return (
         <Box sx={{ display: 'grid', gap: 1, py: 1, px: 2 }}>
             <Typography variant="h6">Sort Products:</Typography>
             <Box sx={{ display: 'flex' }}>
-                <ToggleButtonGroup
-                    value={Sort}
-                    exclusive
-                    orientation="vertical"
-                    onChange={handleSort}
-                    aria-label="text alignment"
+                <RadioGroup
+                    aria-label="gender"
+                    name="controlled-radio-buttons-group"
+                    value={sortBy}
+                    onChange={(e) => sortProducts(e.target.value)}
                 >
-                    <ToggleButton value="relevance" aria-label="Relevance">Relevance</ToggleButton>,
-                    <ToggleButton value="priceLTH" aria-label="Price - Low to High">Price - Low to High</ToggleButton>,
-                    <ToggleButton value="priceHTL" aria-label="Price - High to Low">Price - High to Low</ToggleButton>,
-                </ToggleButtonGroup>
+                    <FormControlLabel value={DEFAULT} control={<Radio />} label="Default" />
+                    <FormControlLabel value={PRICE_LOW_TO_HIGH} control={<Radio />} label="Price - Low to High" />
+                    <FormControlLabel value={PRICE_HIGH_TO_LOW} control={<Radio />} label="Price - High to Low" />
+                </RadioGroup>
             </Box>
         </Box>
     );

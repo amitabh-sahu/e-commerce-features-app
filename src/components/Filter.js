@@ -1,25 +1,14 @@
-import React, { useEffect } from "react";
-import Typography from '@mui/material/Typography';
+import React from "react";
+import Checkbox from '@mui/material/Checkbox';
 import Accordion from '@mui/material/Accordion';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import { filterData, checkSelectedData } from '../utils/helper';
 
-function Filter({ content, type, Target, setTarget }) {
-    useEffect(() => {
-        setTarget(content[type]);
-    }, []);
-
-    const handleToggle = (e) => {
-        const { name, checked } = e.target;
-        const newTarget = Target.map((each) => (
-            each.name === name ? { ...each, checked } : each
-        ));
-        setTarget(newTarget);
-    }
-
+function Filter({ Type, Target, selectedTarget, dispatch }) {
     return (
         <Accordion>
             <AccordionSummary
@@ -27,16 +16,17 @@ function Filter({ content, type, Target, setTarget }) {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
-                <Typography sx={{ textTransform: 'capitalize' }}>{type}</Typography>
+                <Typography sx={{ textTransform: 'capitalize' }}>{Type}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={{ display: 'grid' }}>
                 {Target.map((each, index) => (
                     <FormControlLabel
                         key={index}
-                        control={<Checkbox name={each.name} checked={each?.checked || false} />}
-                        onChange={handleToggle}
-                        value={each.name}
-                        label={each.name} />
+                        control={<Checkbox checked={checkSelectedData(selectedTarget, each)} />}
+                        onChange={() => filterData(selectedTarget, Type, each, dispatch)}
+                        value={each}
+                        label={each}
+                    />
                 ))}
             </AccordionDetails>
         </Accordion>

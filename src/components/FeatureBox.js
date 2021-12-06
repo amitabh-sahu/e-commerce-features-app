@@ -1,56 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { useStateValue } from "../utils/Store";
-import { sortMethod, filterMethod } from "../utils/Helper";
+import { useStateValue } from "../utils/store";
+import { CLEAR_ALL } from '../utils/constants';
 import Filter from "./Filter";
 import Sort from "./Sort";
 
-const content = {
-    brand: [{ name: 'PUMA' }, { name: 'NIKE' }, { name: 'ADIDAS' }, { name: 'FILA' }],
-    size: [{ name: 'S' }, { name: 'M' }, { name: 'L' }, { name: 'XL' }, { name: 'XXL' }],
-    ideal: [{ name: 'MEN' }, { name: 'WOMEN' }]
-};
-
 function FeatureBox() {
-    const [size, setSize] = useState([]);
-    const [brand, setBrand] = useState([]);
-    const [ideal, setIdeal] = useState([]);
-    const [sort, setSort] = useState('relevance');
-    const [{ products }, dispatch] = useStateValue();
+    const [{ sizes, brand, ideal, selectedSizes, selectedBrand, selectedIdeal }, dispatch] = useStateValue();
 
-    const handleClear = () => {
-        setSort('relevance');
-        setSize(content.size);
-        setBrand(content.brand);
-        setIdeal(content.ideal);
+    const clearAll = () => {
+        dispatch({ type: CLEAR_ALL });
     };
-
-    useEffect(() => {
-        sortMethod(sort, products, dispatch);
-    }, [sort])
-
-    useEffect(() => {
-        filterMethod(size, brand, ideal, products, dispatch);
-    }, [size, brand, ideal])
 
     return (
         <Box sx={{ flex: '0.3', m: 2 }}>
             <Divider />
-            <Sort Sort={sort} setSort={setSort} />
+            <Sort />
             <Divider />
             <Box sx={{ display: 'grid', gap: 1, py: 1, px: 2 }}>
                 <Typography variant="h6">Filter Products:</Typography>
                 <Box>
-                    <Filter content={content} type="size" Target={size} setTarget={setSize} />
-                    <Filter content={content} type="brand" Target={brand} setTarget={setBrand} />
-                    <Filter content={content} type="ideal" Target={ideal} setTarget={setIdeal} />
+                    <Filter Type="sizes" Target={sizes} selectedTarget={selectedSizes} dispatch={dispatch} />
+                    <Filter Type="brand" Target={brand} selectedTarget={selectedBrand} dispatch={dispatch} />
+                    <Filter Type="ideal" Target={ideal} selectedTarget={selectedIdeal} dispatch={dispatch} />
                 </Box>
             </Box >
             <Divider />
-            <Button variant="text" fullWidth onClick={handleClear}>Clear All</Button>
+            <Button variant="text" fullWidth onClick={clearAll}>Clear All</Button>
             <Divider />
         </Box>
     );

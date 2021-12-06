@@ -1,0 +1,12 @@
+export const SORT = 'SORT';
+export const DEFAULT = 'DEFAULT';
+export const SET_DATA = 'SET_DATA';
+export const CLEAR_ALL = 'CLEAR_ALL';
+export const SET_SIZES = 'SET_SIZES';
+export const SET_BRAND = 'SET_BRAND';
+export const SET_IDEAL = 'SET_IDEAL';
+export const FILTERED_SIZES = 'FILTERED_SIZES';
+export const FILTERED_BRAND = 'FILTERED_BRAND';
+export const FILTERED_IDEAL = 'FILTERED_IDEAL';
+export const PRICE_LOW_TO_HIGH = 'PRICE_LOW_TO_HIGH';
+export const PRICE_HIGH_TO_LOW = 'PRICE_HIGH_TO_LOW';

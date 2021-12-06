@@ -1,18 +1,16 @@
 import React, { createContext, useContext, useReducer } from 'react';
+import { DEFAULT } from './constants';
+import { reducer } from './reducer';
 
-const initialState = { products: [] };
-export const actionTypes = { SET_DATA: 'SET_DATA' };
-
-const reducer = (state, action) => {
-    switch (action.type) {
-        case actionTypes.SET_DATA:
-            return {
-                ...state,
-                products: action.products,
-            };
-        default:
-            return state;
-    }
+const initialState = {
+    sizes: [],
+    brand: [],
+    ideal: [],
+    products: [],
+    sortBy: DEFAULT,
+    selectedSizes: [],
+    selectedBrand: [],
+    selectedIdeal: [],
 };
 
 export const StateContext = createContext();

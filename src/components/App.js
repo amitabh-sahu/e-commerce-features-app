@@ -2,15 +2,14 @@ import React, { useEffect } from "react";
 import FeatureBox from "./FeatureBox";
 import ContentBox from "./ContentBox";
 import Box from '@mui/material/Box';
-import data from "../data/productData.json";
-import { actionTypes, useStateValue } from "../utils/Store";
+import { getData } from '../utils/helper';
+import { useStateValue } from "../utils/store";
 
 function App() {
-  const [{ products }, dispatch] = useStateValue();
-  const productsCopy = JSON.parse(JSON.stringify(data.products));
+  const [{ }, dispatch] = useStateValue();
 
   useEffect(() => {
-    dispatch({ type: actionTypes.SET_DATA, products: productsCopy });
+    getData(dispatch);
   }, [])
 
   return (

@@ -1,6 +1,7 @@
 {
     "products": [
         {
+            "id": 1,
             "ideal": "MEN",
             "brand": "PUMA",
             "title": "Printed Men Round Neck Green T-Shirt",
@@ -8,14 +9,10 @@
             "price": 674,
             "mrp": "₹1,499",
             "discount": "55% off",
-            "sizes": {
-                "S": 1,
-                "M": 1,
-                "L": 1,
-                "XL": 0
-            }
+            "sizes": "S"
         },
         {
+            "id": 2,
             "ideal": "WOMEN",
             "brand": "PUMA",
             "title": "Solid Women Round Neck Yellow T-Shirt",
@@ -23,14 +20,10 @@
             "price": 952,
             "mrp": "₹1,299",
             "discount": "26% off",
-            "sizes": {
-                "S": 0,
-                "M": 1,
-                "L": 1,
-                "XL": 1
-            }
+            "sizes": "M"
         },
         {
+            "id": 3,
             "ideal": "MEN",
             "brand": "ADIDAS",
             "title": "Printed Men Round Neck White T-Shirt",
@@ -38,14 +31,10 @@
             "price": 779,
             "mrp": "₹1,299",
             "discount": "40% off",
-            "sizes": {
-                "S": 1,
-                "M": 0,
-                "L": 1,
-                "XL": 1
-            }
+            "sizes": "L"
         },
         {
+            "id": 4,
             "ideal": "WOMEN",
             "brand": "ADIDAS",
             "title": "Solid Women Round Neck Blue T-Shirt",
@@ -53,14 +42,10 @@
             "price": 1124,
             "mrp": "₹1,499",
             "discount": "25% off",
-            "sizes": {
-                "S": 1,
-                "M": 1,
-                "L": 0,
-                "XL": 1
-            }
+            "sizes": "XL"
         },
         {
+            "id": 5,
             "ideal": "MEN",
             "brand": "NIKE",
             "title": "Printed Men Round Neck Black T-Shirt",
@@ -68,14 +53,10 @@
             "price": 1386,
             "mrp": "₹1,795",
             "discount": "22% off",
-            "sizes": {
-                "S": 0,
-                "M": 1,
-                "L": 0,
-                "XL": 1
-            }
+            "sizes": "L"
         },
         {
+            "id": 6,
             "ideal": "WOMEN",
             "brand": "NIKE",
             "title": "Printed Women Round Neck Black, Pink T-Shirt",
@@ -83,12 +64,7 @@
             "price": 1155,
             "mrp": "₹1,595",
             "discount": "27% off",
-            "sizes": {
-                "S": 1,
-                "M": 0,
-                "L": 1,
-                "XL": 0
-            }
+            "sizes": "M"
         }
     ]
 }
