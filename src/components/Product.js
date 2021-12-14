@@ -11,10 +11,12 @@ import { SET_CART, SET_TOTAL_ITEMS } from '../utils/constants'
 export default function Product({ data }) {
     const [{ myCart, totalItems }, dispatch] = useStateValue();
     const addToCartHandler = () => {
-        let newData = myCart.filter((each) => each.item !== data);
-        newData.push({ item: data, quantity: 1 });
-        dispatch({ type: SET_CART, payload: newData });
-        dispatch({ type: SET_TOTAL_ITEMS, payload: (totalItems + 1) });
+        const targetIndex = myCart.findIndex((ele) => ele.item === data);
+        if (targetIndex === -1) {
+            myCart.push({ item: data, quantity: 1 });
+            dispatch({ type: SET_CART, payload: myCart });
+            dispatch({ type: SET_TOTAL_ITEMS, payload: (totalItems + 1) });
+        }
     };
 
     return (

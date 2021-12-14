@@ -36,16 +36,22 @@ function CartProduct({ data, index, target, cart }) {
     };
 
     const saveForLaterHandler = () => {
-        saveForLater.push(target);
+        const targetIndex = saveForLater.findIndex((ele) => ele.item === target.item);
+        if (targetIndex === -1) {
+            saveForLater.push(target);
+            dispatch({ type: SET_SAVE_LATER, payload: saveForLater });
+        }
         const newCart = data.filter((each) => each.item !== target.item);
         dispatch({ type: SET_CART, payload: newCart });
-        dispatch({ type: SET_SAVE_LATER, payload: saveForLater });
     };
 
     const moveToCartHandler = () => {
-        myCart.push(target);
+        const targetIndex = myCart.findIndex((ele) => ele.item === target.item);
+        if (targetIndex === -1) {
+            myCart.push(target);
+            dispatch({ type: SET_CART, payload: myCart });
+        }
         const newSaveForLater = data.filter((each) => each.item !== target.item);
-        dispatch({ type: SET_CART, payload: myCart });
         dispatch({ type: SET_SAVE_LATER, payload: newSaveForLater });
     };
 
