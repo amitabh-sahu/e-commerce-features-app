@@ -11,6 +11,9 @@ import {
     FILTERED_IDEAL,
     PRICE_LOW_TO_HIGH,
     PRICE_HIGH_TO_LOW,
+    SET_TOTAL_ITEMS,
+    SET_SAVE_LATER,
+    SET_CART
 } from './constants';
 
 export const reducer = (state, action) => {
@@ -72,6 +75,21 @@ export const reducer = (state, action) => {
                 selectedBrand: [],
                 selectedIdeal: [],
                 sortBy: DEFAULT
+            };
+        case SET_SAVE_LATER:
+            return {
+                ...state,
+                saveForLater: action.payload
+            };
+        case SET_CART:
+            return {
+                ...state,
+                myCart: action.payload
+            };
+        case SET_TOTAL_ITEMS:
+            return {
+                ...state,
+                totalItems: action.payload
             };
         default:
             return state;

@@ -11,6 +11,9 @@ const initialState = {
     selectedSizes: [],
     selectedBrand: [],
     selectedIdeal: [],
+    saveForLater: [],
+    totalItems: 0,
+    myCart: [],
 };
 
 export const StateContext = createContext();

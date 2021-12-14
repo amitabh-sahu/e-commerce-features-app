@@ -10,3 +10,6 @@ export const FILTERED_BRAND = 'FILTERED_BRAND';
 export const FILTERED_IDEAL = 'FILTERED_IDEAL';
 export const PRICE_LOW_TO_HIGH = 'PRICE_LOW_TO_HIGH';
 export const PRICE_HIGH_TO_LOW = 'PRICE_HIGH_TO_LOW';
+export const SET_TOTAL_ITEMS = 'SET_TOTAL_ITEMS';
+export const SET_SAVE_LATER = 'SET_SAVE_LATER';
+export const SET_CART = 'SET_CART';
